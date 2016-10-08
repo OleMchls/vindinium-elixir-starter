@@ -1,6 +1,6 @@
-# Vindium starterkit in Elixir
+# Vindinium starterkit in Elixir
 
-Learn about [Vindium](http://vindinium.org/) first.
+Learn about [Vindinium](http://vindinium.org/) first.
 
 > Vindinium is an Artificial Intelligence programming challenge. You have to take the control of a legendary hero using the programming language of your choice. You will fight with other AI for a predetermined number of turns and the hero with the greatest amount of gold will win.
 
@@ -9,10 +9,10 @@ Learn about [Vindium](http://vindinium.org/) first.
 ## Run with:
 
 ```bash
-mix run vindium.exs <key> <[training|arena]> <number-of-turns>
+mix run vindinium.exs <key> <[training|arena]> <number-of-turns>
 ```
 ### Examples
-```
-mix run vindium.exs abc123 training 10
-mix run vindium.exs abc123 arena
+```bash
+mix run vindinium.exs abc123 training 10
+mix run vindinium.exs abc123 arena
 ```

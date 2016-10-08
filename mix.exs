@@ -1,8 +1,8 @@
-defmodule Vindium.Mixfile do
+defmodule Vindinium.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :vindium,
+    [app: :vindinium,
      version: "0.1.0",
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
