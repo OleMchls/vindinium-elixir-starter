@@ -1,4 +1,4 @@
-defmodule Vindium.Client do
+defmodule Vindinium.Client do
   use HTTPoison.Base
 
   @expected_fields ~w(

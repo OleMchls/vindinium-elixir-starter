@@ -1,6 +1,6 @@
-defmodule VindiumTest do
+defmodule VindiniumTest do
   use ExUnit.Case
-  doctest Vindium
+  doctest Vindinium
 
   test "the truth" do
     assert 1 + 1 == 2

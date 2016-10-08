@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :vindium, key: :value
+#     config :vindinium, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:vindium, :key)
+#     Application.get_env(:vindinium, :key)
 #
 # Or configure a 3rd-party app:
 #
