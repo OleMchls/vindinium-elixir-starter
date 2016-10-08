@@ -16,8 +16,15 @@ defmodule Vindium do
   end
 
   def move(%{"game" => %{"finished" => true}} = state, _secret, _bot) do
-    %{"name" => winnder} = find_leader(state["game"]["heroes"])
-    IO.puts "\nGame ended – #{winnder} won!"
+
+    msg = case find_leader(state["game"]["heroes"]) do
+      %{"name" => winner} ->
+        IO.puts "#{winner} won!"
+      :draw ->
+        IO.puts "DRAW! No winner :("
+    end
+
+    IO.puts "\nGame ended – #{msg}"
   end
 
   def move(state, secret, bot) do
@@ -26,8 +33,15 @@ defmodule Vindium do
     |> move(secret, bot)
   end
 
-  defp find_leader(heros) do
-    Enum.max_by(heros, fn(%{"gold" => gold}) -> gold end)
+  defp find_leader(heroes) do
+    leader = Enum.max_by(heroes, fn(%{"gold" => gold}) -> gold end)
+
+    case Enum.filter(heroes, fn(%{"gold" => gold}) -> gold == leader["gold"] end) do
+      filtered_heroes when length(filtered_heroes) > 1 ->
+        :draw
+      _ ->
+        leader
+    end
   end
 
 end
