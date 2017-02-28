@@ -7,7 +7,12 @@ defmodule Vindinium.Client do
 
   def process_response_body(body) do
     body
-    |> Poison.decode!
-    |> Map.take(@expected_fields)
+    |> Poison.decode
+    |> case do
+      {:ok, data} ->
+        Map.take(data, @expected_fields)
+      _error ->
+        raise "Invalid JSON response from server: #{inspect body}"
+    end
   end
 end
