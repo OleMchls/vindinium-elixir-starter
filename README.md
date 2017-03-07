@@ -16,3 +16,11 @@ mix run vindinium.exs <key> <[training|arena]> <number-of-turns>
 mix run vindinium.exs abc123 training 10
 mix run vindinium.exs abc123 arena
 ```
+
+## Own Vindinium Server
+
+In case you want to play on your own [vindinium server](https://github.com/ornicar/vindinium), simply change the url in your `config.exs`:
+
+```
+config :vindinium, api_url: "http://vindinium.example.com/api/"
+```

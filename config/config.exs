@@ -28,3 +28,6 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+
+# Change the vindinium url if needed.
+#config :vindinium, api_url: "http://vindinium.example.com/api/"

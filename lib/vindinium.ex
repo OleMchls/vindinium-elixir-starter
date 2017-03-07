@@ -8,11 +8,11 @@ defmodule Vindinium do
   end
 
   def start_game(secret, :training, turns) when is_integer(turns) do
-    Vindinium.Client.post!("http://vindinium.org/api/training", {:form, [{:key, secret}, {:turns, turns}]}).body
+    Vindinium.Client.post!(api_url("training"), {:form, [{:key, secret}, {:turns, turns}]}).body
   end
 
   def start_game(secret, :arena, _turns) do
-    Vindinium.Client.post!("http://vindinium.org/api/arena", {:form, [{:key, secret}]}, [timeout: 10000]).body
+    Vindinium.Client.post!(api_url("arena"), {:form, [{:key, secret}]}, [timeout: 10000]).body
   end
 
   def move(%{"game" => %{"finished" => true}} = state, _secret, _bot) do
@@ -42,6 +42,10 @@ defmodule Vindinium do
       _ ->
         leader
     end
+  end
+
+  def api_url(suffix) do
+    Application.get_env(:vindinium, :api_url, "http://vindinium.org/api/") <> suffix
   end
 
 end
