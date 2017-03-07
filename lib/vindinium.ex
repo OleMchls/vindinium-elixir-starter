@@ -28,7 +28,6 @@ defmodule Vindinium do
   end
 
   def move(state, secret, bot) do
-    IO.inspect state
     IO.write(".")
     Vindinium.Client.post!(state["playUrl"], {:form, [{:key, secret}, {:dir, bot.move(state)}]}).body
     |> move(secret, bot)
