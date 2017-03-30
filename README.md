@@ -6,6 +6,12 @@ Learn about [Vindinium](http://vindinium.org/) first.
 
 ![](https://cl.ly/2m0Z2z0Q2a3p/Screen%20Shot%202016-10-08%20at%2021.12.37.png)
 
+## Install dependencies
+
+```bash
+mix deps.get
+```
+
 ## Run with:
 
 ```bash
